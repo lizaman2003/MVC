@@ -1,3 +1,4 @@
+// Подсветка меню и отображение карточек товаров в new-cars
 const tabItem = document.querySelectorAll(".tabs__btn-item");
 const tabContent = document.querySelectorAll(".tabs__content-item");
 
@@ -17,9 +18,18 @@ function open(evt) {
   tabContent.forEach(function (item) {
     item.classList.remove("tabs__content-item--active");
   });
-  document.querySelector(`#${button}`).classList.add("tabs__content-item--active");
+  document
+    .querySelector(`#${button}`)
+    .classList.add("tabs__content-item--active");
 }
+// Меню шапка адаптив
+const menuBtn = document.querySelector(".menu__btn");
+const menu = document.querySelector(".menu__list");
 
+menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("menu__list-active");
+});
+//Слайдер на главной странице
 const swiper = new Swiper(".swiper", {
   effect: "fade",
   pagination: {
